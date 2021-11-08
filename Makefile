@@ -4,7 +4,7 @@
 THEME=Nord
 SHELL=/bin/bash -O globstar
 
-SRC:=$(wildcard *.md)
+SRC:=$(wildcard bm-*.md)
 
 .PHONY: all
 all: pdf

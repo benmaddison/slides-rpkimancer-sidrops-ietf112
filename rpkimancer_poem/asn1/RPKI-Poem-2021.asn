@@ -1,0 +1,33 @@
+RPKI-Poem-2021
+  { iso(1) identified-organization(3) dod(6) internet(1)
+    private(4) enterprise(1) workonline(35743)
+    rpki(3) work-in-progress(1) module(0) poem(2) v1(1) }
+
+DEFINITIONS IMPLICIT TAGS ::=
+BEGIN
+
+IMPORTS
+  CONTENT-TYPE FROM CryptographicMessageSyntax-2010  -- RFC 6268
+    { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
+      pkcs-9(9) smime(16) modules(0) id-mod-cms-2009(58) };
+
+id-ct-Poem OBJECT IDENTIFIER ::=
+  { iso(1) identified-organization(3) dod(6) internet(1)
+    private(4) enterprise(1) workonline(35743)
+    rpki(3) work-in-progress(1) content-type(0) poem(2) v1(1) }
+
+ct-Poem CONTENT-TYPE ::=
+  { TYPE Poem IDENTIFIED BY id-ct-Poem }
+
+Poem ::= SEQUENCE
+  { version [0] PoemVersion DEFAULT 0,
+    asID        ASID,
+    poem        PoemString }
+
+PoemVersion ::= INTEGER
+
+ASID ::= INTEGER
+
+PoemString ::= UTF8String (SIZE (1..200))
+
+END

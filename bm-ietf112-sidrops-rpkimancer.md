@@ -156,4 +156,7 @@ At least two real bugs found so far:
 
 **questions?**
 
+slides and demo code available on
+[github](https://github.com/benmaddison/slides-rpkimancer-sidrops-ietf112)
+
 ---
